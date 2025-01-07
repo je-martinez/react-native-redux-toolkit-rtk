@@ -1,6 +1,6 @@
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
+import { Home, Menu } from 'lucide-react-native';
 
 import { HeaderButton } from '../../components/shared/HeaderButton';
 
@@ -11,17 +11,15 @@ const DrawerLayout = () => (
       options={{
         headerTitle: 'Home',
         drawerLabel: 'Home',
-        drawerIcon: ({ size, color }) => <Ionicons name="home-outline" size={size} color={color} />,
+        drawerIcon: ({ size, color }) => <Home size={size} color={color} />,
       }}
     />
     <Drawer.Screen
       name="(tabs)"
       options={{
-        headerTitle: 'Tabs',
-        drawerLabel: 'Tabs',
-        drawerIcon: ({ size, color }) => (
-          <MaterialIcons name="border-bottom" size={size} color={color} />
-        ),
+        headerTitle: 'Features',
+        drawerLabel: 'Features',
+        drawerIcon: ({ size, color }) => <Menu size={size} color={color} />,
         headerRight: () => (
           <Link href="/modal" asChild>
             <HeaderButton />

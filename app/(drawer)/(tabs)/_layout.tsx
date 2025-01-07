@@ -1,4 +1,5 @@
 import { Tabs } from 'expo-router';
+import { CopyPlusIcon, Server } from 'lucide-react-native';
 
 import { TabBarIcon } from '~/components/shared/TabBarIcon';
 
@@ -12,15 +13,17 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Counter',
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon icon={<CopyPlusIcon color={color} />} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="rtk-usage"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'RTK',
+          tabBarIcon: ({ color }) => <TabBarIcon icon={<Server color={color} />} color={color} />,
         }}
       />
     </Tabs>

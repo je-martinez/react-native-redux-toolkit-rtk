@@ -6,9 +6,9 @@ import { ScreenContent } from '~/components/shared/ScreenContent';
 export default function Home() {
   return (
     <>
-      <Stack.Screen options={{ title: 'Tab Two' }} />
+      <Stack.Screen options={{ title: 'RTK' }} />
       <Container>
-        <ScreenContent path="app/(drawer)/(tabs)/two.tsx" title="Tab Two" />
+        <ScreenContent path="app/(drawer)/(tabs)/rtk-usage.tsx" title="RTK" />
       </Container>
     </>
   );

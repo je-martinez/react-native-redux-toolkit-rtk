@@ -23,7 +23,7 @@ export const HomeView: React.FC = () => {
         <AccordionContent>
           <Text>
             This app is a simple app that allows you to create a counter and increment or decrement
-            using Redux Toolkit, via async and sync actions. Also, it user Redux RTK to fetch data
+            using Redux Toolkit, via async and sync actions. Also, it uses Redux RTK to fetch data
             from an API.
           </Text>
         </AccordionContent>

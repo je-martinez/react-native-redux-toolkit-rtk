@@ -1,4 +1,4 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Info } from 'lucide-react-native';
 import { forwardRef } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 
@@ -7,10 +7,9 @@ export const HeaderButton = forwardRef<typeof Pressable, { onPress?: () => void 
     return (
       <Pressable onPress={onPress}>
         {({ pressed }) => (
-          <FontAwesome
-            name="info-circle"
+          <Info
             size={25}
-            color="gray"
+            color="red"
             style={[
               styles.headerRight,
               {
