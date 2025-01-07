@@ -3,19 +3,25 @@ import {
   increment as incrementFn,
   incrementAsync as incrementAsyncFn,
   decrement as decrementFn,
+  reset as resetFn,
+  selectStatus,
 } from '../slices';
 import { useAppDispatch, useAppSelector } from '../store.definition';
 
 export const useCounter = () => {
   const count = useAppSelector(selectCount);
+  const status = useAppSelector(selectStatus);
 
   const dispatch = useAppDispatch();
 
-  const incrementAsync = () => dispatch(incrementAsyncFn(1));
+  const incrementAsync = ({ triggerError }: { triggerError: boolean }) =>
+    dispatch(incrementAsyncFn({ amount: 1, triggerError }));
 
   const increment = () => dispatch(incrementFn());
 
   const decrement = () => dispatch(decrementFn());
 
-  return { count, incrementAsync, increment, decrement };
+  const reset = () => dispatch(resetFn());
+
+  return { count, status, incrementAsync, increment, decrement, reset };
 };

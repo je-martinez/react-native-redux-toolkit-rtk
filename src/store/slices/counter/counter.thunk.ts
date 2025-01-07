@@ -5,12 +5,17 @@ import { CounterState } from './counter.slice';
 
 const incrementAsyncAction = createAction<number>('counter/incrementAsync');
 
+type IncrementAsyncPayload = {
+  amount: number;
+  triggerError: boolean;
+};
+
 export const incrementAsync = createAsyncThunk<
   number,
-  number,
+  IncrementAsyncPayload,
   { state: { counter: CounterState } }
->(incrementAsyncAction.type, async (amount: number, { getState }) => {
+>(incrementAsyncAction.type, async ({ amount, triggerError }, { getState }) => {
   const { value } = getState().counter;
-  const response = await fetchCount(value, amount);
+  const response = await fetchCount(value, amount, { triggerError });
   return response.data;
 });
