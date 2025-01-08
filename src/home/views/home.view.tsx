@@ -7,8 +7,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '~/components/ui/accordion';
+import { useRecipes } from '~/src/store/hooks/useRecipes';
 
 export const HomeView: React.FC = () => {
+  const { fetchRecipes } = useRecipes({ fetchOnMount: true });
+
+  console.log(fetchRecipes.data?.recipes);
+
   return (
     <Accordion
       type="multiple"

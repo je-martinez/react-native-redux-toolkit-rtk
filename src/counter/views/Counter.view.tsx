@@ -1,4 +1,4 @@
-import { Loader, OctagonX } from 'lucide-react-native';
+import { OctagonX } from 'lucide-react-native';
 import { ActivityIndicator, Text, View } from 'react-native';
 
 import { CounterToolbox } from '../components';
