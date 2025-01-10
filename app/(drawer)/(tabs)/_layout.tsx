@@ -20,7 +20,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="rtk-usage"
+        name="rtk"
         options={{
           title: 'RTK',
           tabBarIcon: ({ color }) => <TabBarIcon icon={<Server color={color} />} color={color} />,

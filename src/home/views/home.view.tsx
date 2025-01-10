@@ -10,9 +10,9 @@ import {
 import { useRecipes } from '~/src/store/hooks/useRecipes';
 
 export const HomeView: React.FC = () => {
-  const { fetchRecipes } = useRecipes({ fetchOnMount: true });
-
-  console.log(fetchRecipes.data?.recipes);
+  const {
+    fetchRecipes: { data, isLoading, error },
+  } = useRecipes();
 
   return (
     <Accordion
