@@ -14,9 +14,9 @@ export const Rating = ({ rating }: { rating: number }) => {
   return (
     <View className="flex flex-row items-center gap-1">
       {numberOfStars.map((star) => (
-        <StarIcon key={star} size={16} color="gold" />
+        <StarIcon fill="gold" key={star} size={16} color="gold" />
       ))}
-      {hasHalfStar && <StarHalfIcon size={16} color="gold" />}
+      {hasHalfStar && <StarHalfIcon fill="gold" size={16} color="gold" />}
       <Text className="text-gold text-sm font-bold">({rating})</Text>
     </View>
   );

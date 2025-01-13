@@ -22,8 +22,16 @@ export const RecipeDetailsView: React.FC = () => {
     },
   });
 
-  const { image, name, difficulty, rating, prepTimeMinutes, servings, cookTimeMinutes } =
-    data || {};
+  const {
+    image,
+    name,
+    rating,
+    prepTimeMinutes,
+    servings,
+    cookTimeMinutes,
+    ingredients,
+    instructions,
+  } = data || {};
 
   return (
     <ScrollView>
@@ -49,6 +57,26 @@ export const RecipeDetailsView: React.FC = () => {
             <Text className="text-base">Cook: {cookTimeMinutes} mins</Text>
           </View>
         </View>
+      </View>
+      <View className="m-8 mt-2">
+        <Text className="mb-2 text-xl font-bold">Ingredients</Text>
+        <View className="flex flex-col flex-wrap">
+          {ingredients?.map((ingredient) => (
+            <Text key={ingredient} className="text-base">
+              {ingredient}
+            </Text>
+          ))}
+        </View>
+      </View>
+      <View className="m-8 mt-0">
+        <Text className="mb-2 text-xl font-bold">Instructions</Text>
+        {instructions?.map((instruction, index) => (
+          <>
+            <Text key={instruction} className="text-base">
+              {index + 1}. {instruction}
+            </Text>
+          </>
+        ))}
       </View>
     </ScrollView>
   );
