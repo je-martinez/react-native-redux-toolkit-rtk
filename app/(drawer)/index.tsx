@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Stack.Screen options={{ title: 'Home' }} />
-      <Container>
+      <Container className="bg-white">
         <ScreenContent path="app/(drawer)/index.tsx">
           <HomeView />
         </ScreenContent>

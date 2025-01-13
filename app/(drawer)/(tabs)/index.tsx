@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Stack.Screen options={{ title: 'Counter' }} />
-      <Container>
+      <Container className="bg-white">
         <ScreenContent path="app/(drawer)/(tabs)/index.tsx" title="Counter">
           <CounterView />
         </ScreenContent>

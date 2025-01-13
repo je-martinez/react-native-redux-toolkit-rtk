@@ -4,11 +4,12 @@ type ScreenContentProps = {
   title?: string;
   path?: string;
   children?: React.ReactNode;
+  className?: string;
 };
 
-export const ScreenContent = ({ title, children }: ScreenContentProps) => {
+export const ScreenContent = ({ title, children, className }: ScreenContentProps) => {
   return (
-    <View className={styles.container}>
+    <View className={[styles.container, className].join(' ')}>
       {title && (
         <>
           <Text className={styles.title}>{title}</Text>

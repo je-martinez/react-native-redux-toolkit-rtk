@@ -3,7 +3,6 @@
     "name": "react-native-redux-toolkit-rtk",
     "slug": "react-native-redux-toolkit-rtk",
     "version": "1.0.0",
-
     "scheme": "react-native-redux-toolkit-rtk",
     "web": {
       "bundler": "metro",
@@ -13,15 +12,11 @@
     "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -29,7 +24,8 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.react-native-redux-toolkit-rtk"
     },
     "android": {
       "adaptiveIcon": {
