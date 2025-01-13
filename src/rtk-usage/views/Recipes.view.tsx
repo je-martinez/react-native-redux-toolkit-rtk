@@ -12,7 +12,11 @@ export const RecipesView: React.FC = () => {
 
   const {
     fetchRecipes: { data, isLoading, error },
-  } = useRecipes();
+  } = useRecipes({
+    fetchAllRecipes: {
+      fetchOnMount: true,
+    },
+  });
 
   const recipes = useMemo(() => data?.recipes ?? [], [data]);
 
@@ -21,6 +25,7 @@ export const RecipesView: React.FC = () => {
   const renderItem = useCallback(({ item }: { item: Recipe }) => {
     return (
       <RecipeListItem
+        id={item.id}
         name={item.name}
         image={item.image}
         difficulty={item.difficulty}

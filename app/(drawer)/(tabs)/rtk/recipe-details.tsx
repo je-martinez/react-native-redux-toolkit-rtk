@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <Stack.Screen options={{ title: 'RTK' }} />
-      <Container className="bg-white">
-        <ScreenContent path="app/(drawer)/(tabs)/rtk-usage.tsx" title="RTK">
+      <Container className="bg-white" margin={0}>
+        <ScreenContent path="app/(drawer)/(tabs)/rtk-usage.tsx">
           <RecipeDetailsView />
         </ScreenContent>
       </Container>

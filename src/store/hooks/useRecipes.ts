@@ -12,15 +12,19 @@ type Options = {
 
 const defaultOptions: Options = {
   fetchAllRecipes: {
-    fetchOnMount: true,
+    fetchOnMount: false,
   },
-  fetchRecipeById: {},
+  fetchRecipeById: {
+    fetchOnMount: false,
+  },
 };
 
 export const useRecipes = (options: Options = defaultOptions) => {
   return {
     fetchRecipes: {
-      ...useGetRecipesQuery(undefined, {}),
+      ...useGetRecipesQuery(undefined, {
+        skip: !options?.fetchAllRecipes?.fetchOnMount,
+      }),
     },
     fetchRecipeById: {
       ...useGetRecipeByIdQuery(options?.fetchRecipeById?.id ?? 0, {
