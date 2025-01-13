@@ -4,7 +4,9 @@ import { CookingPot, ForkKnife, ChefHat } from 'lucide-react-native';
 import { ScrollView, Text, useWindowDimensions, View } from 'react-native';
 
 import { Rating } from '~/components/shared/Rating';
+import { Skeleton } from '~/components/ui/skeleton';
 import { useRecipes } from '~/src/store';
+import { RecipeSkeleton } from '../components';
 
 export const RecipeDetailsView: React.FC = () => {
   const { width, height } = useWindowDimensions();
@@ -32,6 +34,10 @@ export const RecipeDetailsView: React.FC = () => {
     ingredients,
     instructions,
   } = data || {};
+
+  if (isLoading) {
+    return <RecipeSkeleton />;
+  }
 
   return (
     <ScrollView>
@@ -71,11 +77,9 @@ export const RecipeDetailsView: React.FC = () => {
       <View className="m-8 mt-0">
         <Text className="mb-2 text-xl font-bold">Instructions</Text>
         {instructions?.map((instruction, index) => (
-          <>
-            <Text key={instruction} className="text-base">
-              {index + 1}. {instruction}
-            </Text>
-          </>
+          <Text key={instruction} className="text-base">
+            {index + 1}. {instruction}
+          </Text>
         ))}
       </View>
     </ScrollView>

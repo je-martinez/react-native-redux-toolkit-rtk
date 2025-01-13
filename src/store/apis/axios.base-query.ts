@@ -17,12 +17,14 @@ const axiosBaseQuery =
     data,
     params,
     headers,
+    delay,
   }: {
     url: string;
     method: HttpMethod;
     data?: any;
     params?: any;
     headers?: any;
+    delay?: number;
   }) => {
     try {
       const baseUrl = recipesApi.getUri();
@@ -33,6 +35,9 @@ const axiosBaseQuery =
         params,
         headers,
       });
+      if (delay) {
+        await new Promise((resolve) => setTimeout(resolve, delay));
+      }
       return { data: result.data };
     } catch (axiosError) {
       const err = axiosError;
